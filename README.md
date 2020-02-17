@@ -10,12 +10,15 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 
 ## TODO
 
+- [ ] Verify ALL THE THINGS
+  - [ ] all posts/pages
+  - [ ] all urls look good
+  - [ ] no broken pages
+- [ ] Link to domain joshbuchea.com ***
 - [ ] Update newsletter form field placeholders
 - [ ] Verify metadata
 - [ ] Verify config
 - [ ] Prepare repo (remove unused files, final edits, reset history, etc.)
-- [ ] Deploy to Netlify
-- [ ] Verify form works and cross-domain error is non-issue in production
 - [ ] Maybe delete frontmatter placeholder
 - [ ] Update blog theme colors?
 - [ ] Add Edit on GitHub link
@@ -24,6 +27,8 @@ A starter project in [Gatsby.js](https://www.gatsbyjs.org/) with [MDX](https://g
 - [ ] Open PRs on parent repo
   - [ ] Use google analytics id from config file in `gatsby-config.js`
   - [ ] Add `0.5rem` to submit button in footer form to resolve display issue (firefox only?)
+- [x] Deploy to Netlify
+- [x] Verify form works and cross-domain error is non-issue in production
 - [x] Add google analytics id
 - [x] Delete test post
 - [x] Disable service worker
