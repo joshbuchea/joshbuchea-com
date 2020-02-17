@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from './Theming'
 
-import { TwitterShareButton, FacebookShareButton } from 'react-share'
+import { TwitterShareButton } from 'react-share'
 
 const Share = ({ url, title, twitterHandle }) => {
   const theme = useTheme()
@@ -42,7 +42,7 @@ const Share = ({ url, title, twitterHandle }) => {
       >
         Twitter
       </TwitterShareButton>
-      <FacebookShareButton
+      {/* <FacebookShareButton
         url={url}
         quote={title}
         via={twitterHandle.split('@').join('')}
@@ -51,7 +51,7 @@ const Share = ({ url, title, twitterHandle }) => {
         `}
       >
         Facebook
-      </FacebookShareButton>
+      </FacebookShareButton> */}
     </div>
   )
 }

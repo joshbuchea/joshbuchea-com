@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import SchemaOrg from './SchemaOrg'
 import config from '../../../config/website'
 
-const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
+const SEO = ({ postData, frontmatter = {}, postImage, isNote }) => (
   <StaticQuery
     query={graphql`
       {
@@ -35,13 +35,13 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
     render={({ site: { siteMetadata: seo } }) => {
       const postMeta =
         frontmatter || postData.childMarkdownRemark.frontmatter || {}
-      const title = isBlogPost ? postMeta.title : config.siteTitle
+      const title = isNote ? postMeta.title : config.siteTitle
       const description = postMeta.description || seo.description
       const image = postImage ? `${seo.canonicalUrl}${postImage}` : seo.image
       const url = postMeta.slug
         ? `${seo.canonicalUrl}${path.sep}${postMeta.slug}`
         : seo.canonicalUrl
-      const datePublished = isBlogPost ? postMeta.datePublished : false
+      const datePublished = isNote ? postMeta.datePublished : false
 
       return (
         <React.Fragment>
@@ -53,7 +53,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 
             {/* OpenGraph tags */}
             <meta property="og:url" content={url} />
-            {isBlogPost ? <meta property="og:type" content="article" /> : null}
+            {isNote ? <meta property="og:type" content="article" /> : null}
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
@@ -67,7 +67,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             <meta name="twitter:image" content={image} />
           </Helmet>
           <SchemaOrg
-            isBlogPost={isBlogPost}
+            isNote={isNote}
             url={url}
             title={title}
             image={image}
@@ -85,7 +85,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 )
 
 SEO.propTypes = {
-  isBlogPost: PropTypes.bool,
+  isNote: PropTypes.bool,
   postData: PropTypes.shape({
     childMarkdownRemark: PropTypes.shape({
       frontmatter: PropTypes.any,
@@ -96,7 +96,7 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  isBlogPost: false,
+  isNote: false,
   postData: { childMarkdownRemark: {} },
   postImage: null,
 }

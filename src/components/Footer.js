@@ -35,7 +35,8 @@ const Footer = ({ author, noSubscribeForm }) => (
             opacity: 0.7;
           `}
         >
-          {author && `${author} \u00A9 ${new Date().getFullYear()}`}
+          {/* {author && `${author} \u00A9 ${new Date().getFullYear()}`} */}
+          As an Amazon Associate I earn from qualifying purchases
         </div>
         <div>
           <Twitter />

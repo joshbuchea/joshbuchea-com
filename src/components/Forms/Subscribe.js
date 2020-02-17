@@ -8,13 +8,13 @@ import { bpMaxSM } from '../../lib/breakpoints'
 import Message from '../ConfirmMessage/Message'
 import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
-const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
+// const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 
 const SubscribeSchema = Yup.object().shape({
-  email_address: Yup.string()
+  email: Yup.string()
     .email('Invalid email address')
     .required('Required'),
-  first_name: Yup.string(),
+  fname: Yup.string(),
 })
 
 const PostSubmissionMessage = ({ response }) => {
@@ -39,7 +39,8 @@ class SignUp extends React.Component {
     this.setState({ submitted: true })
     try {
       const response = await fetch(
-        `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
+        // `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
+        `https://joshbuchea.us20.list-manage.com/subscribe/post?u=d2cd3071564fbf7001bed1736&id=d5283d8443`,
         {
           method: 'post',
           body: JSON.stringify(values, null, 2),
@@ -73,20 +74,23 @@ class SignUp extends React.Component {
     return (
       <div>
         {!successful && (
-          <h2
-            css={css`
-              margin-bottom: ${rhythm(1)};
-              margin-top: 0;
-            `}
-          >
-            Join the Newsletter
-          </h2>
+          <>
+            <h2
+              css={css`
+                margin-bottom: ${rhythm(1)};
+                margin-top: 0;
+              `}
+            >
+              Join the Newsletter
+            </h2>
+            <p>Subscribe to get my latest content by email. Unsubscribe at any time.</p>
+          </>
         )}
 
         <Formik
           initialValues={{
-            email_address: '',
-            first_name: '',
+            email: '',
+            fname: '',
           }}
           validationSchema={SubscribeSchema}
           onSubmit={values => this.handleSubmit(values)}
@@ -98,6 +102,7 @@ class SignUp extends React.Component {
                     display: flex;
                     align-items: flex-end;
                     button {
+                      margin-bottom: 0.5rem;
                       margin-left: 10px;
                     }
                     .field-error {
@@ -126,7 +131,7 @@ class SignUp extends React.Component {
                     }
                   `}
                 >
-                  <label htmlFor="first_name">
+                  <label htmlFor="fname">
                     <div
                       css={css`
                         display: flex;
@@ -136,7 +141,7 @@ class SignUp extends React.Component {
                     >
                       First Name
                       <ErrorMessage
-                        name="first_name"
+                        name="fname"
                         component="span"
                         className="field-error"
                       />
@@ -144,7 +149,7 @@ class SignUp extends React.Component {
                     <Field
                       aria-label="your first name"
                       aria-required="false"
-                      name="first_name"
+                      name="fname"
                       placeholder="Jane"
                       type="text"
                     />
@@ -164,7 +169,7 @@ class SignUp extends React.Component {
                     >
                       Email
                       <ErrorMessage
-                        name="email_address"
+                        name="email"
                         component="span"
                         className="field-error"
                       />
@@ -172,7 +177,7 @@ class SignUp extends React.Component {
                     <Field
                       aria-label="your email address"
                       aria-required="true"
-                      name="email_address"
+                      name="email"
                       placeholder="jane@acme.com"
                       type="email"
                     />
@@ -182,8 +187,8 @@ class SignUp extends React.Component {
                     type="submit"
                     disabled={isSubmitting}
                   >
-                    {!isSubmitting && 'Submit'}
-                    {isSubmitting && 'Submitting...'}
+                    {!isSubmitting && 'Subscribe'}
+                    {isSubmitting && 'Subscribing...'}
                   </button>
                 </Form>
               )}

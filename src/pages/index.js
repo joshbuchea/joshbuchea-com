@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+// import styled from '@emotion/styled'
 import Layout from 'components/Layout'
-import Link from 'components/Link'
+// import Link from 'components/Link'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
@@ -36,7 +36,8 @@ const Hero = () => {
             max-width: ${rhythm(15)};
           `}
         >
-          Your blog says the things you want to say.
+          {/* Your site says the things you want to say. */}
+          Just another day in paradise 🌴
         </h1>
       </Container>
       <div
@@ -49,13 +50,13 @@ const Hero = () => {
   )
 }
 
-const Description = styled.p`
-  margin-bottom: 10px;
-  display: inline-block;
-`
+// const Description = styled.p`
+//   margin-bottom: 10px;
+//   display: inline-block;
+// `
 
 export default function Index({ data: { site, allMdx } }) {
-  const theme = useTheme()
+  // const theme = useTheme()
   return (
     <Layout site={site}>
       <Hero />
@@ -64,7 +65,7 @@ export default function Index({ data: { site, allMdx } }) {
           padding-bottom: 0;
         `}
       >
-        {allMdx.edges.map(({ node: post }) => (
+        {/* {allMdx.edges.map(({ node: post }) => (
           <div
             key={post.id}
             css={css`
@@ -98,9 +99,9 @@ export default function Index({ data: { site, allMdx } }) {
             </Description>
           </div>
         ))}
-        <Link to="/blog" aria-label="Visit blog page">
-          View all articles
-        </Link>
+        <Link to="/notes" aria-label="Visit notes page">
+          View all notes
+        </Link> */}
         <hr />
       </Container>
     </Layout>
@@ -117,8 +118,11 @@ export const pageQuery = graphql`
     }
     allMdx(
       limit: 5
+      filter: {
+        fields: { collection: { eq: "notes" } }
+        frontmatter: { published: { ne: false } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false } } }
     ) {
       edges {
         node {
@@ -128,6 +132,7 @@ export const pageQuery = graphql`
             title
             slug
             date
+            collection
           }
           parent {
             ... on File {

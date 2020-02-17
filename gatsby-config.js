@@ -17,11 +17,11 @@ module.exports = {
     image: config.siteLogo,
     author: {
       name: config.author,
-      minibio: `
-        <strong>egghead</strong> is the premier place on the internet for 
-        experienced developers to enhance their skills and stay current
-        in the fast-faced field of web development.
-      `,
+      // minibio: `
+      //   <strong>egghead</strong> is the premier place on the internet for 
+      //   experienced developers to enhance their skills and stay current
+      //   in the fast-faced field of web development.
+      // `,
     },
     organization: {
       name: config.organization,
@@ -37,8 +37,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
+        path: `${__dirname}/content/notes`,
+        name: 'notes',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: 'pages',
       },
     },
     {
@@ -88,7 +95,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `GOOGLE_ID`,
+        trackingId: config.googleAnalyticsID,
       },
     },
     {
@@ -152,6 +159,6 @@ module.exports = {
         pathToConfigModule: `src/lib/typography`,
       },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
   ],
 }

@@ -6,7 +6,7 @@ import SEO from 'components/SEO'
 import { css } from '@emotion/core'
 import Container from 'components/Container'
 import Layout from '../components/Layout'
-import { fonts } from '../lib/typography'
+// import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
@@ -15,14 +15,15 @@ export default function Post({
   data: { site, mdx },
   pageContext: { next, prev },
 }) {
-  const author = mdx.frontmatter.author || config.author
-  const date = mdx.frontmatter.date
+  // const author = mdx.frontmatter.author || config.author
+  // const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
   const banner = mdx.frontmatter.banner
+  const collection = mdx.fields.collection
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
-      <SEO frontmatter={mdx.frontmatter} isBlogPost />
+      <SEO frontmatter={mdx.frontmatter} isNote />
       <article
         css={css`
           width: 100%;
@@ -38,7 +39,7 @@ export default function Post({
           >
             {title}
           </h1>
-          <div
+          {/* <div
             css={css`
               display: flex;
               justify-content: center;
@@ -57,7 +58,7 @@ export default function Post({
             {author && <h3>{author}</h3>}
             {author && <span>—</span>}
             {date && <h3>{date}</h3>}
-          </div>
+          </div> */}
           {banner && (
             <div
               css={css`
@@ -78,14 +79,16 @@ export default function Post({
         </Container>
         {/* <SubscribeForm /> */}
       </article>
-      <Container noVerticalPadding>
-        <Share
-          url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
-          title={title}
-          twitterHandle={config.twitterHandle}
-        />
-        <br />
-      </Container>
+      {collection === 'notes' && (
+        <Container noVerticalPadding>
+          <Share
+            url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
+            title={title}
+            twitterHandle={config.twitterHandle}
+          />
+          <br />
+        </Container>
+      )}
     </Layout>
   )
 }
@@ -96,6 +99,9 @@ export const pageQuery = graphql`
       ...site
     }
     mdx(fields: { id: { eq: $id } }) {
+      fields {
+        collection
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

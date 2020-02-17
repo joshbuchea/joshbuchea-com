@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
 
-const Blog = ({
+const Notes = ({
   data: { site, allMdx },
   pageContext: { pagination, categories },
 }) => {
@@ -118,7 +118,7 @@ const Blog = ({
   )
 }
 
-export default Blog
+export default Notes
 
 export const pageQuery = graphql`
   query {
