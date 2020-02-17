@@ -40,9 +40,10 @@ class SignUp extends React.Component {
     try {
       const response = await fetch(
         // `https://app.convertkit.com/forms/${FORM_ID}/subscriptions`,
-        `https://joshbuchea.us20.list-manage.com/subscribe/post?u=d2cd3071564fbf7001bed1736&id=d5283d8443`,
+        // `https://joshbuchea.us20.list-manage.com/subscribe/post?u=d2cd3071564fbf7001bed1736&id=d5283d8443`,
+        `https://joshbuchea.us20.list-manage.com/subscribe/post-json?u=d2cd3071564fbf7001bed1736&id=d5283d8443&c=?`,
         {
-          method: 'post',
+          method: 'get',
           body: JSON.stringify(values, null, 2),
           headers: {
             Accept: 'application/json',
