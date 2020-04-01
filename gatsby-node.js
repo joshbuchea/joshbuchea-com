@@ -138,9 +138,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         : node.frontmatter.slug || titleSlugged
 
     // Create a field on this node for the "collection" of the parent
-    // NOTE: This is necessary so we can filter `allMarkdownRemark` by
-    // `collection` otherwise there is no way to filter for only markdown
-    // documents of type `post` or `note`.
+    // NOTE: This is necessary so we can filter nodes by "collection"
+    // otherwise there is no way to filter for only markdown
+    // documents of type `post` or `note` or `whatever`.
     // https://github.com/gatsbyjs/gatsby/issues/1634#issuecomment-388899348
     createNodeField({
       name: 'collection',
