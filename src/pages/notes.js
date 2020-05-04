@@ -72,7 +72,7 @@ export default function Index({ data: { site, allMdx } }) {
                 {postsByCategory[category].map(post => (
                   <li key={post.id}>
                     <Link
-                      to={post.frontmatter.slug}
+                      to={`/${post.frontmatter.slug}`}
                       sx={{
                         display: 'block',
                         color: 'inherit',
