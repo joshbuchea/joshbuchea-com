@@ -71,6 +71,10 @@ const ResetStyles = () => {
     margin-bottom: 1rem;
     overflow: auto;
   }
+  /* added "pre > pre" selector + rule to reduce unnecessary margin/padding in code blocks */
+  pre > pre {
+    margin-bottom: 0;
+  }
   figure {
     margin: 0 0 1rem 0;
   }
