@@ -7,10 +7,16 @@ categories:
 - Mobile Dev
 ---
 
+Run a React Native App on iPad or any iOS Simulator:
+
 ```sh
 yarn react-native run-ios --simulator="iPad (7th generation)"
 ```
 
-List available iOS Simulators with: `xcrun simctl list devices`
+List available iOS Simulators:
+
+```sh
+xcrun simctl list devices
+```
 
 At the time of authoring this note, there is no way to set a default device for the Simulator.
