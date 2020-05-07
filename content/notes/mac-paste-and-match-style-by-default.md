@@ -7,8 +7,6 @@ categories:
 - macOS
 ---
 
-# Paste and Match Style by Default on macOS
-
 Copying & pasting between applications can be a frustrating experience when un-desired formatting is included.
 
 macOS provides **paste and match style** to paste without formatting.
