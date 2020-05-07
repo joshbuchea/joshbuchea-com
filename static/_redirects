@@ -29,6 +29,7 @@
 /forms-for-static-sites /static-sites-forms
 /google-maps-cheatsheet /google-maps
 /homebrew-cheatsheet /homebrew
+/react-native-always-open-packager-in-iterm /react-native-packager-always-open-with-iterm
 /macos-start-a-webserver-with-one-terminal-command /mac-single-command-web-server
 /remove-the-ios-twitter-badge-app-icon /twitter-ios-remove-app-icon-badge
 /revert-ssh-agent-behavior-pre-macos-sierra /mac-revert-ssh-agent-behavior-pre-macos-sierra
