@@ -55,8 +55,8 @@ const Header = ({ siteTitle }) => {
                 margin-right: 16px;
               }
               .active {
-                display: none;
-                visibility: hidden;
+                /* display: none;
+                visibility: hidden; */
               }
             `}
           >
