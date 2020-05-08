@@ -2,7 +2,7 @@
 slug: react-native-image-auto-scale
 date: 2020-05-08
 title: 'Auto-scaling Images in React Native'
-published: false
+published: true
 categories:
 - Mobile Dev
 ---
