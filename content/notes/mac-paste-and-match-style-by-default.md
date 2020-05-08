@@ -11,7 +11,7 @@ Copying & pasting between applications can be a frustrating experience when un-d
 
 macOS provides **paste and match style** to paste without formatting.
 
-## Set as Default Behavior
+To set as the default system behavior:
 
 - Open **System Preferences**
 - Choose **Keyboard**
@@ -21,3 +21,4 @@ macOS provides **paste and match style** to paste without formatting.
   - Application: **All Applications**
   - Menu Title: **Paste and Match Style**
   - Keyboard Shortcut: **⌘V (Press Command + V)**
+- Press **Add**
