@@ -1,9 +1,8 @@
 ---
-slug: dairy-free-banana-ice-cream
+slug: recipe-banana-ice-cream-dairy-free
 date: 2018-08-31
 title: 'Dairy Free Banana Ice Cream'
 published: true
-# banner: './banner.png'
 categories:
 - Recipes
 ---

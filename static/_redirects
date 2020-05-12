@@ -25,11 +25,12 @@
 /convert-psd-to-png-with-imagemagick /imagemagick-psd-to-png
 /create-a-website-mirror-with-wget /wget-create-website-mirror
 /create-animated-gifs /animated-gifs
+/dairy-free-banana-ice-cream /recipe-banana-ice-cream-dairy-free
 /enable-xdebug-in-mamp-for-mac /mac-enable-xdebug-in-mamp
 /forms-for-static-sites /static-sites-forms
 /google-maps-cheatsheet /google-maps
 /homebrew-cheatsheet /homebrew
-/react-native-always-open-packager-in-iterm /react-native-packager-always-open-with-iterm
 /macos-start-a-webserver-with-one-terminal-command /mac-single-command-web-server
+/react-native-always-open-packager-in-iterm /react-native-packager-always-open-with-iterm
 /remove-the-ios-twitter-badge-app-icon /twitter-ios-remove-app-icon-badge
 /revert-ssh-agent-behavior-pre-macos-sierra /mac-revert-ssh-agent-behavior-pre-macos-sierra
