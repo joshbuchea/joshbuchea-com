@@ -1,7 +1,7 @@
 ---
 slug: react-native-error-could-not-find-iphone-x-simulator
 date: 2020-05-05
-title: 'Error: Could not find iPhone X Simulator'
+title: 'React Native Error: Could not find iPhone X Simulator'
 published: true
 categories:
 - Mobile Dev
@@ -16,7 +16,11 @@ error Command failed with exit code 1.
 
 In my case, the iPhone X Simulator wasn't installed.
 
-I verified installed simulators before and after with: `xcrun simctl list devices`
+I verified installed simulators before and after with:
+
+```sh
+xcrun simctl list devices
+```
 
 ## Solution
 
