@@ -11,4 +11,4 @@ published: true
 
 ## Links
 
-- [Feat-Setting: The Most Valuable Exercise I Do Every Month](https://tim.blog/2017/05/15/fear-setting/)
+- [Fear-Setting: The Most Valuable Exercise I Do Every Month](https://tim.blog/2017/05/15/fear-setting/)
