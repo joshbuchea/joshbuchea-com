@@ -43,6 +43,5 @@ Some films and tv specials our family enjoys during the holidays:
 
 ## Thanksgiving
 
-- A Charlie Brown Thanksgiving (1973)
 - Free Birds (2013)
 - Planes, Trains and Automobiles (1987)
