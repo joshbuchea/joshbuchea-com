@@ -3,15 +3,12 @@ slug: markdown
 date: 2019-11-23
 title: 'Markdown'
 published: true
-# banner: './banner.png'
 ---
 
 ## Convert Markdown to Other Formats
 
 - [Pandoc](https://pandoc.org/) (handles TONS of formats!)
-- Markdown to Confluence Wiki
-  - In-browser converter (in markdown2confluence project): http://chunpu.github.io/markdown2confluence/browser/
-  - markdown2confluence: convert markdown to confluence markup https://github.com/chunpu/markdown2confluence
+- [Convert Markdown to Confluence Wiki Markup](https://techtricks.io/markdown-to-confluence-wiki-markup/)
 
 ## GitHub Flavored Markdown (GFM)
 
